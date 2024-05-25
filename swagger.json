@@ -1,0 +1,89 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "Sample API",
+      "description": "A sample API that demonstrates how to use Flask-SwaggerUI.",
+      "version": "1.0"
+    },
+    "basePath": "/",
+    "schemes": [
+      "http"
+    ],
+    "consumes": [
+      "application/json"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "paths": {
+      "/person/get": {
+        "get": {
+          "summary": "Returns a simple greeting message.",
+          "parameters": [
+            {
+              "in": "query",
+              "name": "id",
+              "description": "Person ID",
+              "required": true,
+              "type": "integer"
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful response.",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/person/insert": {
+        "post": {
+          "summary": "Insert a Person",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "person",
+              "description": "Person object to be inserted.",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "fname": {
+                    "type": "string"
+                  },
+                  "lname": {
+                    "type": "string"
+                  }
+                }              }
+            }],
+          "responses": {
+            "200": {
+              "description": "Successful response.",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+     
+  }
